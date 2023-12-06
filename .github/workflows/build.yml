@@ -30,13 +30,20 @@ jobs:
 
       - name: Run Yarn Install
         run: |
-             cd ./packages/app-mobile/
-             npm i -g corepack
-             yarn install             
+          cd ./packages/app-mobile/
+          npm i -g corepack
+          yarn install
+
+      - name: Set execute permissions for gradlew
+        run: |
+          cd ./packages/app-mobile/android
+          chmod +x gradlew
+
       - name: Build application
         run: |
-             cd ./packages/app-mobile/android
-             ./gradlew assembleDebug             
+          cd ./packages/app-mobile/android
+          ./gradlew assembleDebug
+
       - name: Upload application
         uses: actions/upload-artifact@v2
         with:
