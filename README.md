@@ -57,4 +57,4 @@ Téléchargez l'APK généré depuis le serveur SSH.
 Installez l'APK sur un appareil Android.
 Exécutez l'application sur l'appareil.
 
-<span style="color:red">L'APK devrait se trouver dans le dossier wrapper dans le chemin /mobile/deploy_2023-12-07_0916/app-mobile/android/gradle/wrapper$</span>
+~~L'APK devrait se trouver dans le dossier wrapper dans le chemin /mobile/deploy_2023-12-07_0916/app-mobile/android/gradle/wrapper$~~
