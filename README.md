@@ -1,4 +1,4 @@
-# ReactMobile Test
+# ReactMobile Roman Germain
 
 # Guide de Déploiement et d'Exécution de l'Application
 
