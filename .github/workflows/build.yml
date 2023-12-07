@@ -39,36 +39,27 @@ jobs:
           cd ./packages/app-mobile/android
           chmod +x gradlew
 
-      - name: Build application
-        run: |
-          cd ./packages/app-mobile/android
-          ./gradlew assembleDebug
-
       - name: Upload application
         uses: actions/upload-artifact@v2
         with:
           name: app
           path: ./packages/app-mobile/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 3
-  deploy:
-      runs-on: ubuntu-latest
-      needs: build
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-
-        - name: Set up SSH
-          run: |
+      - name: Set up SSH
+        run: |
             mkdir -p ~/.ssh
             echo "${{ secrets.SSH_DEPLOY_KEY }}" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
-        - name: Deploy to SSH Server
-          run: |
+      - name: Deploy to SSH Server
+        run: |
             timestamp=$(date +"%Y%m%d%H%M%S")
             folder_name="deploy_$timestamp"
             ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "mkdir ~/mobile/$folder_name"
             scp -r -P ${{ secrets.SSH_PORT }} -i ~/.ssh/id_rsa build/* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/mobile/$folder_name
             
+
+
+
     
