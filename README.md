@@ -50,3 +50,8 @@ Ce guide fournit des instructions étape par étape pour déployer et exécuter 
 
 7. **Accéder à l'application :**
    - Ouvrez un navigateur web et accédez à l'adresse IP du serveur sur le port ou le chemin spécifié.
+  
+8. Exécution de l'application
+Téléchargez l'APK généré depuis le serveur SSH.
+Installez l'APK sur un appareil Android.
+Exécutez l'application sur l'appareil.
