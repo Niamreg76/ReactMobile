@@ -35,18 +35,18 @@ Ce guide fournit des instructions étape par étape pour déployer et exécuter 
      npm install
      ```
 
-5. **Compiler Votre Application :**
+5. **Compiler l'application :**
      ```bash
      # Exemple pour une application Node.js
      npm run build
      ```
 
-6. **Lancer Votre Application :**
+6. **Lancer l'application :**
    - Démarrez l'application.
      ```bash
      # Exemple pour une application Node.js
      npm start
      ```
 
-7. **Accéder à Votre Application :**
+7. **Accéder à l'application :**
    - Ouvrez un navigateur web et accédez à l'adresse IP du serveur sur le port ou le chemin spécifié.
